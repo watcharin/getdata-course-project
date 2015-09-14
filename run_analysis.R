@@ -53,5 +53,9 @@ run_analysis <- function() {
 	})
 	
 	## Bind every row from each group together.
-	do.call(rbind, avgData)
+	avgData <- do.call(rbind, avgData)
+	
+	write.table(avgData, 'out.txt', row.names = F)
+	
+	avgData
 }
